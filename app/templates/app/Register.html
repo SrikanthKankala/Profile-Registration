@@ -1,0 +1,87 @@
+
+<!-- 1 -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <!-- Custom Theme files -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+
+    <script>
+        // JavaScript function to hide error message on input field click
+        function hideErrorMessage(elementId) {
+            document.getElementById(elementId).style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>Registration Form</h1>
+        <center>
+            <h3 style="color: red;">{{msg}}</h3>
+        </center>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="{% url 'insert' %}" method="post">
+                    {% csrf_token %}
+
+                    <div class="input-container">
+                        <input id="email" type="email" name="email" placeholder="Email" required=""
+                            onclick="hideErrorMessage('msg1')">
+                        <h3 class="error-message" style="color: red; display: block;" id="msg1">{{msg1}}</h3>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="input-container">
+                        <input class="text" type="text" name="Mobile_number" placeholder="Mobile Number" required=""
+                            onclick="hideErrorMessage('msg2')">
+                        <h3 class="error-message" style="color: red; display: block;" id="msg2">{{msg2}}</h3>
+                        <h3 class="error-message" style="color: red; display: block;" id="msg3">{{msg3}}</h3>
+                    </div>
+                    <br>
+                    <br>
+                    <input class="text" type="password" name="password" placeholder="Password" required="">
+                    <div class="input-container">
+                        <input class="text w3lpass" type="password" name="confirmpassword" placeholder="Confirm Password"
+                            required="" onclick="hideErrorMessage('msg4'),('msg1')">
+                        <h3 class="error-message" style="color: red; display: block;" id="msg4">{{msg4}}</h3>
+                    </div>
+                    <br>
+                    <input type="submit" value="SIGNUP">
+                </form>
+                <ul class="colorlib-bubbles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <!-- //main -->
+        </body>
+
+</html>
+
+
+
+
+
+
+
+
+
